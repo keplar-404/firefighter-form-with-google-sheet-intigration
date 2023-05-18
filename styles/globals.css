@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+    background-color: white;
+}
+
+/* font-family: 'Inter', sans-serif;
+font-family: 'Merriweather', serif;
+font-family: 'Roboto', sans-serif; */
+
+
+.roboto{
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+}
+.inter{
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+}
+
+/* navbar */
+.gls{
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(25px);
+}
+
+.title-color {
+    background: linear-gradient(124deg, #FF6B00, #FFB800);
+    background-clip: text;
+    color: transparent;
+}
+
+.form-input{
+    appearance: none;
+    background-color: #fff;
+    border-color: #d2d6dc;
+    border-width: 1px;
+    border-radius: 0.375rem;
+    padding: 0.5rem 0.75rem;
+}
+
