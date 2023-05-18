@@ -12,7 +12,7 @@ When anyone submit the form their information will store in google sheet
 
 website:
 
-https://firefighter-form-with-google-sheet-intigration.vercel.app/
+https://firefighterform.vercel.app/
 
 google sheet:
 
