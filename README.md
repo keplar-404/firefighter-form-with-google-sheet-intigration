@@ -12,7 +12,7 @@ When anyone submit the form their information will store in google sheet
 
 website:
 
-https://firefighter-form-with-google-sheet-intigration.vercel.app/
+https://firefighterform.vercel.app/
 
 google sheet:
 
@@ -22,8 +22,9 @@ https://docs.google.com/spreadsheets/d/1dva8U0a5AsxkKRhoexYcmdD0WYXKwQRKnEdXYc4R
 To start this project on locally follow the instraction by given terminal command
 
 ```bash
-  git clone https://github.com/keplar-404/testOFCoredevs.git
+  git clone https://github.com/keplar-404/firefighter-form-with-google-sheet-intigration.git
 ```
+Go to the folder then
 ```bash
   yarn install
 ```
