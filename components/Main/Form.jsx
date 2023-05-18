@@ -1,12 +1,11 @@
-import { Button } from "flowbite-react";
-import React from "react";
+import { Button, Spinner } from "flowbite-react";
+import React, { useRef, useState } from "react";
 import { Element } from "react-scroll";
-import { useRef, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { Spinner } from "flowbite-react";
 
 function Form() {
+  // Refs for form fields
   const afffRef = useRef(null);
   const cancerRef = useRef(null);
   const _caseRef = useRef(null);
@@ -17,14 +16,17 @@ function Form() {
   const zipCodeRef = useRef(null);
   const textRef = useRef(null);
 
+  // State variables for form validation and loading spinner
   const [afffState, setAfffState] = useState(false);
   const [cancerState, setCancerState] = useState(false);
   const [caseState, setCaseState] = useState(false);
   const [spin, setSpin] = useState(false);
 
+  // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Validate form fields
     const afff = afffRef.current.value;
     if (afff === "--Select--") {
       setAfffState(true);
@@ -49,6 +51,7 @@ function Form() {
       setCaseState(false);
     }
 
+    // Prepare data object for API request
     const firstName = firstNameRef.current.value;
     const lastName = lastNameRef.current.value;
     const email = emailRef.current.value;
@@ -56,7 +59,7 @@ function Form() {
     const zip = zipCodeRef.current.value;
     const text = textRef.current.value;
 
-    const _data = {
+    const data = {
       FirstName: firstName,
       LastName: lastName,
       Email: email,
@@ -68,19 +71,22 @@ function Form() {
       Text: text,
     };
 
-    setSpin(true);
+    setSpin(true); // Display loading spinner
 
+    // Send form data to the API
     axios
       .post(
         "https://sheet.best/api/sheets/bf08ea4d-8686-43b6-bde6-afbc32508a6a",
-        _data
+        data
       )
       .then((res) => {
-        toast("Your Submited successfully", {
+        toast("Your submission was successful", {
           hideProgressBar: true,
           autoClose: 3000,
           type: "success",
         });
+
+        // Reset form fields and loading spinner
         setSpin(false);
         afffRef.current.value = "--Select--";
         cancerRef.current.value = "--Select--";
@@ -92,26 +98,21 @@ function Form() {
         zipCodeRef.current.value = "";
         textRef.current.value = "";
       });
-
-    // console.log(afff);
-    // console.log(cancer);
-    // console.log(_case);
-    // console.log(firstName);
-    // console.log(lastName);
-    // console.log(email);
-    // console.log(phone);
-    // console.log(zip);
   };
 
+  // Function to allow only numbers in input fields
   const number = (event) => {
     event.target.value = event.target.value.replace(/[^0-9]/g, "");
   };
+
+  // Function to format zip code input field
   const zip = (event) => {
     let value = event.target.value;
     value = value.replace(/[^0-9]/g, ""); // Remove non-numeric characters
     value = value.slice(0, 5); // Limit to 5 characters
     event.target.value = value;
   };
+
   return (
     <>
       <Element name="Form">
