@@ -9,9 +9,11 @@ export default function Home() {
       <Head>
         <title>firefoamwaning</title>
       </Head>
-      <header className="flex justify-center items-center w-full">
-        <div className="w-full px-[7vw] fixed top-0">
-          <Header />
+      <header className="w-full">
+        <div className="w-full flex justify-center items-center px-[7vw] fixed top-0">
+          <div className="w-full">
+            <Header />
+          </div>
         </div>
       </header>
 
