@@ -14,7 +14,6 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Merriweather:wght@400;700&family=Roboto&display=swap"
           rel="stylesheet"
         />
-        <title>firefoamwaning</title>
       </Head>
       <body>
         <Main />

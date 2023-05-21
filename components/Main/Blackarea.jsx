@@ -4,7 +4,9 @@ import { Link } from "react-scroll";
 function Blackarea() {
   return (
     <>
-      <div className="bg-black mt-64 py-[3rem] rounded-lg">
+    <div className="flex justify-center items-center w-full">
+
+      <div className="bg-black mt-64 py-[3rem] rounded-lg w-full">
         <div className="flex justify-center items-center">
           <p className="text-white roboto text-center sm:text-base md:text-lg xl:text-xl sm:w-[20rem] md:w-[35rem] lg:w-[40rem] xl:w-[44rem] 2xl:w-[44rem] ">
             If you are suffering because of exposure to firefighting foam, you
@@ -21,6 +23,7 @@ function Blackarea() {
           </Link>
         </div>
       </div>
+    </div>
     </>
   );
 }

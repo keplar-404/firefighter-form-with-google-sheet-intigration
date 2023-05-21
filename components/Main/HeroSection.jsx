@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import hero3 from "../../public/img/hero3.png";
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
 import { Element } from "react-scroll";
 
 function HeroSection() {
@@ -22,11 +22,11 @@ function HeroSection() {
             Uncovering the Truth <br className="sm:static md:hidden" /> Behind
             Firefighting Foam's Safety
           </h2>
-          <Link to="Form" smooth={true} duration={500} offset={-100}>
+          <ScrollLink to="Form" smooth={true} duration={500} offset={-100}>
           <button className="sm:hidden lg:block bg-black mt-14 hover:bg-gray-800 w-[11rem] h-11 rounded-[13px] text-white inter text-[16px] ">
             Submit Foam
           </button>
-          </Link>
+          </ScrollLink>
         </div>
         <div className="">
           <Image
@@ -38,11 +38,11 @@ function HeroSection() {
           />
         </div>
         <div className="sm:static lg:hidden">
-          <Link to="Form" smooth={true} duration={500} offset={-100}>
+          <ScrollLink to="Form" smooth={true} duration={500} offset={-100}>
             <button className="sm:static lg:hidden bg-black mt-10 hover:bg-gray-800 w-[11rem] h-11 rounded-[13px] text-white inter text-[16px] ">
               Submit Foam
             </button>
-          </Link>
+          </ScrollLink>
         </div>
       </div>
     </Element>
